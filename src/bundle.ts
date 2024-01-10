@@ -1,5 +1,5 @@
 import fs from 'node:fs'
-import MagicString from 'magic-string'
+import MagicString, {Bundle as MagicStringBundle} from 'magic-string'
 import { Module } from './module'
 import type { BundleOptions } from './type'
 
@@ -35,14 +35,13 @@ export class Bundle {
   }
 
   generate() {
-    // eslint-disable-next-line ts/ban-ts-comment
-    // @ts-expect-error
-    const magicString = new MagicString.Bundle()
+    const magicString = new MagicStringBundle()
+    console.log(magicString)
     this.statements.forEach((statement) => {
       const source = statement.__source.clone()
       magicString.addSource({
         content: source,
-        separator: '\n',
+        // separator: '\n',
       })
     })
     return { code: magicString.toString() }
