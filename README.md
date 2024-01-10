@@ -1,0 +1,2 @@
+# cherry
+Lightweight JavaScript Bundler
