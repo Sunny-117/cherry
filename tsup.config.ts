@@ -1,7 +1,10 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['./src/index.ts'],
+  entry: {
+    index: 'src/index.ts',
+    cli: 'src/cli.ts',
+  },
   format: ['cjs', 'esm'],
   target: 'node18',
   splitting: true,
@@ -9,4 +12,6 @@ export default defineConfig({
   clean: true,
   dts: true,
   platform: 'node',
+  // target: 'es2020',
+  sourcemap: true,
 })

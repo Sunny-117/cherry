@@ -23,6 +23,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "cherry": "bin/cherry"
+  },
   "files": [
     "dist"
   ],
@@ -40,6 +43,8 @@
   },
   "dependencies": {
     "acorn": "^8.8.0",
+    "cac": "^6.7.12",
+    "chokidar": "^3.5.3",
     "magic-string": "^0.26.5"
   },
   "devDependencies": {
