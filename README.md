@@ -1,6 +1,6 @@
 # cherry [![npm](https://img.shields.io/npm/v/@sunny-117/cherry.svg)](https://npmjs.com/package/@sunny-117/cherry)
 
-<img src="./assets/logo.webp">
+<img src="./assets/logo.webp" width="300">
 
 Cherry is a lightweight and efficient JavaScript bundler designed for rapid construction and packaging of modern web applications. With its simple yet powerful workflow, Cherry is dedicated to providing optimal performance and development experience.
 
