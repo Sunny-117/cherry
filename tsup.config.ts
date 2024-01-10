@@ -8,5 +8,5 @@ export default defineConfig({
   cjsInterop: true,
   clean: true,
   dts: true,
-  platform: 'neutral',
+  platform: 'node',
 })

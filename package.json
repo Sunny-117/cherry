@@ -1,31 +1,31 @@
 {
   "name": "cherry",
+  "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@6.35.0",
   "description": "Lightweight JavaScript Bundler",
-  "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/Sunny-117/cherry#readme",
-  "bugs": {
-    "url": "https://github.com/Sunny-117/cherry/issues"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sunny-117/cherry.git"
   },
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/Sunny-117/cherry/issues"
+  },
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./package.json": "./package.json"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -37,6 +37,10 @@
     "typecheck": "tsc --noEmit",
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "acorn": "^8.8.0",
+    "magic-string": "^0.26.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.2",
