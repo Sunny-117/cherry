@@ -1,6 +1,3 @@
 import antfu from '@antfu/eslint-config'
 
-export default {
-  ...antfu(),
-  ignorePatterns: ['playground', 'dist'],
-}
+export default antfu()

@@ -1,11 +1,11 @@
 lockfileVersion: 5.3
 
 specifiers:
-  cherry: link:..
+  '@sunny-117/cherry': link:..
   nodemon: ^3.0.2
 
 dependencies:
-  cherry: link:..
+  '@sunny-117/cherry': link:..
 
 devDependencies:
   nodemon: 3.0.2
