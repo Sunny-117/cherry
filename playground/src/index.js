@@ -6,5 +6,6 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 // debugger
-const entry = resolve(__dirname, './main.js')
-cherry(entry, resolve(__dirname, '../bundle.js'))
+// const entryTest1 = resolve(__dirname, './main.js')
+const entryTest2 = resolve(__dirname, './test2/main.js')
+cherry(entryTest2, resolve(__dirname, '../bundle.js'))
