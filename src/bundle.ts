@@ -23,7 +23,7 @@ export class Bundle {
     }
   }
 
-  fetchModule(importee: string, importer: string) {
+  fetchModule(importee: string, importer?: string) {
     let route
     if (!importer) { // 如果没有模块导入此模块，说明这就是入口模块
       route = importee
