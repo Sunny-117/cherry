@@ -59,13 +59,18 @@ export function analysis(ast: Program, magicString: MagicString) {
       },
     })
   })
+  console.log('第一次遍历：', scope);
+  (ast as any)._scope = scope
   // 找到外部依赖 _dependsOn
   ast.body.forEach((statement) => {
     walk(statement, {
       enter(node) {
-        if (node._scope) // 如果这个节点有一个_scope属性，说明这个节点产生了新的作用域
+        if (node._scope) {
+          // 如果这个节点有一个_scope属性，说明这个节点产生了新的作用域
           scope = node._scope
-        if (scope && node.type === 'Identifier') {
+        }
+
+        if (node.type === 'Identifier') {
           // 从当前作用域出发，向上递归，找到这个变量在哪个作用域中定义，找不到则是外部依赖
           const definingScope = scope.findDefineScope(node.name)
           if (!definingScope)
@@ -73,8 +78,8 @@ export function analysis(ast: Program, magicString: MagicString) {
         }
       },
       leave(node) {
-        if (node._scope)
-          scope = node.parent
+        if (node._scope && scope.parent)
+          scope = scope.parent
       },
     })
   })

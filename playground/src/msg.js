@@ -1,6 +1,2 @@
-import { a, b } from './a.js'
-
-function demo() {
-  console.log(a)
-}
-demo()
+export const name = 'zhangsan'
+export const age = 10

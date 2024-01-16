@@ -5,5 +5,5 @@ import { cherry } from '@sunny-117/cherry'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-const entry = resolve(__dirname, './msg.js')
+const entry = resolve(__dirname, './main.js')
 cherry(entry, resolve(__dirname, '../bundle.js'))
