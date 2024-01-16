@@ -1,7 +1,7 @@
 import type { ScopeOptions } from '../type'
 
 export class Scope {
-  name: string
+  name?: string
   params: string[]
   parent: Scope | null
   constructor(options: ScopeOptions = {} as ScopeOptions) {

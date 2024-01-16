@@ -1,5 +1,6 @@
+import { a, b } from './a.js'
 
-let a = 1
-let b = 2
-export const xx = 'Sunny-117'
-export const age = 23
+function demo() {
+  console.log(a)
+}
+demo()

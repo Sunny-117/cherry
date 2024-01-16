@@ -15,7 +15,7 @@ export type EnterFunction = (node: AstNode, parent: AstNode | null, enter: Enter
 export type LeaveFunction = (node: AstNode, parent: AstNode | null, enter: EnterFunction, leave: LeaveFunction) => void
 
 export interface ScopeOptions {
-  name: string
+  name?: string
   params: string[]
   parent: Scope | null
 }

@@ -30,12 +30,23 @@ export class Module {
       if (node.type === 'ImportDeclaration') {
         const source = node.source.value
         const specifiers = node.specifiers
-        // }
         specifiers.forEach((specifier) => {
           const name = ((specifier as ImportSpecifier).imported as Identifier).name
           const localName = specifier.local.name
           this.imports[localName] = { name, localName, source }
         })
+      }
+      else if (node.type === 'ExportNamedDeclaration') {
+        const declaration = node.declaration
+        if (declaration && declaration.type === 'VariableDeclaration') {
+          const name = (declaration.declarations[0].id as Identifier).name
+          // this.exports['age'] =  {node, localName: age, expression}
+          this.exports[name] = {
+            node,
+            localName: name,
+            expression: declaration,
+          }
+        }
       }
     })
     analysis(this.ast, this.code)
