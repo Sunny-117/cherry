@@ -1,8 +1,14 @@
+import fs from 'node:fs'
+import path, { dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import type { Program } from 'acorn'
 import type MagicString from 'magic-string'
 import type { AstNode } from '../type'
 import { Scope } from './scope'
 import { walk } from './walk'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 /**
  * 找到当前模块使用到了那些变量，哪些变量是当前模块声明的，那些是导入的
@@ -83,4 +89,5 @@ export function analysis(ast: Program, magicString: MagicString) {
       },
     })
   })
+  fs.writeFileSync(path.resolve(__dirname, 'ast.json'), JSON.stringify(ast), 'utf-8')
 }

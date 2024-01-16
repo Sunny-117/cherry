@@ -6,7 +6,7 @@ export class Scope {
   parent: Scope | null
   constructor(options: ScopeOptions = {} as ScopeOptions) {
     this.name = options.name
-    this.params = options.params || []
+    this.params = options.params || [] // 改作用域链声明的变量
     this.parent = options.parent
   }
 
