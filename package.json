@@ -2,7 +2,7 @@
   "name": "@sunny-117/cherry",
   "type": "module",
   "version": "0.0.3",
-  "packageManager": "pnpm@6.35.0",
+  "packageManager": "pnpm@6.35.1",
   "description": "Lightweight JavaScript Bundler",
   "license": "MIT",
   "homepage": "https://github.com/Sunny-117/cherry#readme",
