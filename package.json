@@ -44,7 +44,7 @@
   "dependencies": {
     "acorn": "^8.8.0",
     "cac": "^6.7.12",
-    "chokidar": "^3.5.3",
+    "chokidar": "^4.0.0",
     "magic-string": "^0.26.5"
   },
   "devDependencies": {
