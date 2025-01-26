@@ -1,6 +1,6 @@
 import { defineConfig } from '@sunny-117/cherry'
 
 export default defineConfig({
-  entry: './src/msg.js',
+  entry: './src/index.js',
   outputFileName: 'out.js',
 })

@@ -1,8 +1,9 @@
 import type { ModuleDeclaration, Statement } from 'acorn'
 import type { BundleOptions } from './type'
 import fs from 'node:fs'
-import path from 'node:path'
-import MagicString, { Bundle as MagicStringBundle } from 'magic-string'
+import path, { resolve } from 'node:path'
+import process from 'node:process'
+import { Bundle as MagicStringBundle } from 'magic-string'
 import { Module } from './module'
 
 export class Bundle {
@@ -14,12 +15,17 @@ export class Bundle {
     this.module = {}
   }
 
-  build(outputFileName: string) {
+  build() {
     const entryModule = this.fetchModule(this.entryPath)
     if (entryModule) {
       this.statements = entryModule.expendAllStatements()
       const { code } = this.generate()
-      fs.writeFileSync(outputFileName, code, 'utf-8')
+      const outputDir = resolve(process.cwd(), 'dist')
+      if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true })
+      }
+      const fullPath = `${outputDir}/bundle.js`
+      fs.writeFileSync(fullPath, code, 'utf-8')
     }
   }
 

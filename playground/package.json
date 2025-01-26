@@ -12,8 +12,5 @@
   },
   "dependencies": {
     "@sunny-117/cherry": "link:.."
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
   }
 }
