@@ -1,9 +1,9 @@
+import type { ModuleDeclaration, Statement } from 'acorn'
+import type { BundleOptions } from './type'
 import fs from 'node:fs'
 import path from 'node:path'
 import MagicString, { Bundle as MagicStringBundle } from 'magic-string'
-import type { ModuleDeclaration, Statement } from 'acorn'
 import { Module } from './module'
-import type { BundleOptions } from './type'
 
 export class Bundle {
   entryPath: string

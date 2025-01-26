@@ -1,9 +1,9 @@
-import fs from 'node:fs'
-import path, { dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import type { Program } from 'acorn'
 import type MagicString from 'magic-string'
 import type { AstNode } from '../type'
+import fs from 'node:fs'
+import path, { dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { Scope } from './scope'
 import { walk } from './walk'
 

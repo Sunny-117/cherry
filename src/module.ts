@@ -1,9 +1,9 @@
-import MagicString from 'magic-string'
 import type { Identifier, ImportSpecifier, ModuleDeclaration, Program, Statement } from 'acorn'
-import { parse } from 'acorn'
-import { analysis } from './ast/analysis'
-import type { ModuleDeclarationWithInclude, ModuleOptions, StatementWithInclude } from './type'
 import type { Bundle } from './bundle'
+import type { ModuleDeclarationWithInclude, ModuleOptions, StatementWithInclude } from './type'
+import { parse } from 'acorn'
+import MagicString from 'magic-string'
+import { analysis } from './ast/analysis'
 import { hasOwnProporty } from './utils'
 
 export class Module {
